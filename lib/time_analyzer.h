@@ -9,15 +9,39 @@
 #ifndef TIME_ANALYZER_H_
 #define TIME_ANALYZER_H_ 
 
-#include "analyzer.h"
+//#include "analyzer.h"
 
 #include <chrono>
+#include "log.h"
+#include <sstream>
 
-class CTimeAnalyzer  : CAnalyzer
+class CTimeAnalyzer
 {
 public:
-    CTimeAnalyzer ();
-    virtual ~CTimeAnalyzer ();
+    CTimeAnalyzer (){};
+    virtual ~CTimeAnalyzer (){};
+
+    virtual bool Analyse(bool (*_pf)(void *_pg), void *_pg);
+    template<typename T>
+    bool Analyse(T &_fc)
+    {
+        CLog::Log("Begin to run program");
+        m_start = std::chrono::system_clock::now();
+
+        bool ret = _fc();
+
+        m_end = std::chrono::system_clock::now();
+        CLog::Log("End to run program");
+
+        std::chrono::duration<double> elapsed_seconds = m_end - m_start;
+        std::stringstream info;
+        info << "Cost " << elapsed_seconds.count() << "s";
+        CLog::Log(info.str());
+
+        return ret;
+    }
+
+protected:
 
 private:
     /* data */

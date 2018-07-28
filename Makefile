@@ -11,6 +11,8 @@ CPP=g++
 MAIN_SRC=\
 		 src/main.o \
 		 lib/log.o \
+		 lib/time_analyzer.o \
+		 lib/sort.o
 		 
 
 all:		main
