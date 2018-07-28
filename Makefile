@@ -12,7 +12,8 @@ MAIN_SRC=\
 		 src/main.o \
 		 lib/log.o \
 		 lib/time_analyzer.o \
-		 lib/sort.o
+		 lib/sort.o \
+		 lib/util.o
 		 
 
 all:		main
