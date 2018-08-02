@@ -11,7 +11,7 @@
 #include <cstdlib>
 #include <iostream>
 
-int random(int _max)
+int random(int _max, int _min /* = 0 */)
 {
     static bool isInit = false;
     if (!isInit)
@@ -19,12 +19,11 @@ int random(int _max)
         std::srand(std::time(0));
         isInit = true;
     }
-    return 1 + std::rand() / ((RAND_MAX + 1u) / _max);
+    return _min + std::rand() / ((RAND_MAX + 1u) / (_max - _min));
 }
 
 void show_array(int *_arr, int _size)
 {
-    std::cout << "Array has " << _size << " elements." << std::endl;
     for (int i = 0; i < _size; ++i) 
     {
         std::cout << _arr[i] << " ";

@@ -9,6 +9,6 @@
 #ifndef UTIL_H
 #define UTIL_H
 
-int random(int _max);
+int random(int _max, int _min = 0);
 void show_array(int *_arr, int _size);
 #endif /* end of include guard: UTIL_H */

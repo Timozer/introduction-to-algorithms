@@ -11,9 +11,9 @@
 
 //#include "analyzer.h"
 
-#include <chrono>
 #include "log.h"
 #include <sstream>
+#include <chrono>
 
 class CTimeAnalyzer
 {
@@ -22,13 +22,13 @@ public:
     virtual ~CTimeAnalyzer (){};
 
     virtual bool Analyse(bool (*_pf)(void *_pg), void *_pg);
-    template<typename T>
-    bool Analyse(T &_fc)
+    template<typename FUNCTOR, typename ARGUMENTS = void>
+    bool Analyse(FUNCTOR *_fc, ARGUMENTS *_pt = nullptr)
     {
         CLog::Log("Begin to run program");
         m_start = std::chrono::system_clock::now();
 
-        bool ret = _fc();
+        bool ret = (*_fc)(_pt);
 
         m_end = std::chrono::system_clock::now();
         CLog::Log("End to run program");
@@ -49,4 +49,6 @@ private:
     std::chrono::time_point<std::chrono::system_clock> m_end;
 };
 
+template<>
+bool CTimeAnalyzer::Analyse(bool (*)(void *), void *);
 #endif /* ifndef TIME_ANALYZER_H_ */

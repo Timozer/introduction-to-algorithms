@@ -22,7 +22,7 @@ public:
     CSort (SORT_ARGS *_pargs): m_p_args(_pargs){};
     virtual ~CSort (){};
 
-    virtual bool operator()() = 0;
+    virtual bool operator()(void *_pargs) = 0;
 protected:
 
     SORT_ARGS *m_p_args;
@@ -36,7 +36,7 @@ public:
     CInsertSort (SORT_ARGS *_pargs) : CSort(_pargs){};
     virtual ~CInsertSort (){};
 
-    virtual bool operator()();
+    virtual bool operator()(void *_pargs);
 private:
     /* data */
 };
@@ -44,10 +44,13 @@ private:
 class CMergeSort : CSort
 {
 public:
-    CMergeSort ();
-    virtual ~CMergeSort ();
+    CMergeSort (SORT_ARGS *_pargs) : CSort(_pargs){};
+    virtual ~CMergeSort (){};
 
+    virtual bool operator()(void *_pargs);
 private:
     /* data */
+    void merge(int _lidx, int _ridx);
+    void merge(int _lidx, int _midx, int _ridx);
 };
 #endif /* ifndef SORT_H_ */
