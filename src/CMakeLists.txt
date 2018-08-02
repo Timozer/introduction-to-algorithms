@@ -1,8 +1,10 @@
 
 SET(SRC_LIST main.cpp
     lib/log.cpp
-    lib/sort.cpp
+    algorithms/sort/sort.cpp
     lib/time_analyzer.cpp
-    lib/util.cpp
+    util/util.cpp
+    algorithms/find/maxsubarr.cpp
+    
     )
 ADD_EXECUTABLE(study ${SRC_LIST})

@@ -22,11 +22,7 @@ int random(int _max, int _min /* = 0 */)
     return _min + std::rand() / ((RAND_MAX + 1u) / (_max - _min));
 }
 
-void show_array(int *_arr, int _size)
+int max(int _lh, int _rh)
 {
-    for (int i = 0; i < _size; ++i) 
-    {
-        std::cout << _arr[i] << " ";
-    }
-    std::cout << std::endl;
+    return _lh > _rh ? _lh : _rh;
 }

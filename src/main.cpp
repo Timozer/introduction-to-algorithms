@@ -8,50 +8,39 @@
 
 #include <iostream>
 
-#include <vector>
 #include "lib/log.h"
 #include "lib/time_analyzer.h"
-#include "lib/sort.h"
-#include "lib/util.h"
+#include "algorithms/sort/sort.h"
+#include "util/util.h"
+#include "algorithms/find/maxsubarr.h"
+#include "data/data.h"
 
 using namespace std;
 
 #define ARRAY_MAX 200
 
-bool test(void * _pargs)
-{
-    char *pStr = static_cast<char *>(_pargs);
-    std::cout << *pStr << std::endl;
-    return true;
-}
 int main(int argc, char *argv[])
 {
-    CSort::SORT_ARGS sort_args;
-    sort_args.input = new int[ARRAY_MAX]; 
-    sort_args.output = new int[ARRAY_MAX];
-    sort_args.size = ARRAY_MAX;
-    for (int i = 0; i < ARRAY_MAX; ++i) 
-    {
-        sort_args.input[i] = random(100, -100);
-    }
+    Data<int> data;
+    data.genData(5, random<20, -20>);
+    data.show();
+
     CTimeAnalyzer analyzer;
 
-    char testStr[] = "test analyse function";
-    analyzer.Analyse(test, testStr);
-
-    CInsertSort isort(&sort_args);
+    InsertSort isort(data);
     if(analyzer.Analyse(&isort))
     {
-        //show_array(sort_args.input, sort_args.size);
-        //show_array(sort_args.output, sort_args.size);
+        isort.getResult().show();
     }
 
-    CMergeSort msort(&sort_args);
+    MergeSort msort(data);
     if(analyzer.Analyse(&msort))
     {
-        //show_array(sort_args.input, sort_args.size);
-        //show_array(sort_args.output, sort_args.size);
+        msort.getResult().show();
     }
+
+    CMaxSubArray maxsubarr(data);
+    analyzer.Analyse(&maxsubarr);
     return 0;
 }
 

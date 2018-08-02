@@ -10,5 +10,8 @@
 #define UTIL_H
 
 int random(int _max, int _min = 0);
-void show_array(int *_arr, int _size);
+template<int MAX, int MIN = 0>
+int random() { return random(MAX, MIN); }
+
+int max(int _lh, int _rh);
 #endif /* end of include guard: UTIL_H */
