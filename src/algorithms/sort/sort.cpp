@@ -12,7 +12,7 @@
 
 bool InsertSort::operator()(void *_pargs)
 {
-    auto data = getSortData();
+    Data<int>& data = getSortData();
     if (data.size() < 2) {
         return true;
     }
@@ -30,7 +30,7 @@ bool InsertSort::operator()(void *_pargs)
 
 bool MergeSort::operator()(void *_pargs)
 {
-    auto data = getSortData();
+    Data<int>& data = getSortData();
     merge(0, data.size() - 1);
     return true;
 }
@@ -45,7 +45,7 @@ void MergeSort::merge(int _lidx, int _ridx) // [_lidx, _ridx]
 }
 void MergeSort::merge(int _lidx, int _midx, int _ridx)
 {
-    auto data = getSortData();
+    Data<int>& data = getSortData();
     int ln = _midx + 1 - _lidx;
     int rn = _ridx  - _midx;
     int *larray = new int[ln + 1];

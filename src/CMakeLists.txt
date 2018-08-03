@@ -5,6 +5,8 @@ SET(SRC_LIST main.cpp
     lib/time_analyzer.cpp
     util/util.cpp
     algorithms/find/maxsubarr.cpp
-    
+    algorithms/sort/heapsort.cpp
+    algorithms/sort/quicksort.cpp
     )
+SET(CMAKE_CXX_STANDARD 11)
 ADD_EXECUTABLE(study ${SRC_LIST})

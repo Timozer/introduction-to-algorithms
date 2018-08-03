@@ -23,7 +23,7 @@ public:
 
     virtual bool operator()(void *_pargs) = 0;
 protected:
-    Data<int> &getSortData() { return m_result; }
+    Data<int> &getSortData() { return m_result; } 
 private:
     /* data */
     Data<int> &m_data;

@@ -12,8 +12,6 @@
 #include <vector>
 #include <iostream>
 
-#include "../util/util.h"
-
 template<typename T>
 class Data : public std::vector<T>
 {
