@@ -9,4 +9,5 @@ SET(SRC_LIST main.cpp
     algorithms/sort/quicksort.cpp
     )
 SET(CMAKE_CXX_STANDARD 11)
+SET(CMAKE_BUILD_TYPE DEBUG)
 ADD_EXECUTABLE(study ${SRC_LIST})

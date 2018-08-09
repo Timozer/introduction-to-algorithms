@@ -11,6 +11,8 @@
 
 #include <vector>
 #include <iostream>
+#include <iterator>
+#include <algorithm>
 
 template<typename T>
 class Data : public std::vector<T>
@@ -18,9 +20,11 @@ class Data : public std::vector<T>
 public:
     void show() const
     {
-        for (auto item : *this) {
-            std::cout << item << " ";
-        }
+        std::copy(this->begin(), this->end(),
+                std::ostream_iterator<int>(std::cout, " "));
+        //for (auto item : *this) {
+            //std::cout << item << " ";
+        //}
         std::cout << std::endl;
     }
     bool genData(int _size, T (*_genfunc)())

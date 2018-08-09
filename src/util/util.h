@@ -9,9 +9,14 @@
 #ifndef UTIL_H
 #define UTIL_H
 
+#include <istream>
+#include <string>
+
 int random(int _max, int _min = 0);
 template<int MAX, int MIN = 0>
 int random() { return random(MAX, MIN); }
 
 int max(int _lh, int _rh);
+
+std::string read(std::istream &_in);
 #endif /* end of include guard: UTIL_H */

@@ -7,6 +7,9 @@
 **/
 
 #include <iostream>
+#include <iterator>
+#include <fstream>
+#include <climits>
 
 #include "lib/log.h"
 #include "lib/time_analyzer.h"
@@ -19,39 +22,63 @@
 
 using namespace std;
 
+static int p[100] = { 0, 1, 5, 8, 9, 10, 17, 17, 20, 24, 30, 0};
+
+int cutrod(int *_p, int n)
+{
+    if (n == 0) {
+        return 0;
+    }
+    static int pRes[100] = { 0 };
+    if (pRes[n] == 0) {
+        int res = -INT_MAX; 
+        for (int i = 1; i <= n; ++i) 
+        {
+            res = std::max(res, _p[i] + cutrod(_p, n - i));
+        }
+        pRes[n] = res;
+    }
+    return pRes[n];
+}
+
 int main(int argc, char *argv[])
 {
-    Data<int> data;
-    data.genData(10, random<20, -20>);
-    data.show();
-
-    CTimeAnalyzer analyzer;
-
-    InsertSort isort(data);
-    if(analyzer.Analyse(&isort))
+    for (int i = 1; i < 101; ++i) 
     {
-        isort.getResult().show();
+        cout << cutrod(p, i) << " ";
     }
+    cout << endl;
+    //Data<int> data;
+    //data.genData(300000, random<10000, -10000>);
+    ////data.show();
 
-    MergeSort msort(data);
-    if(analyzer.Analyse(&msort))
-    {
-        msort.getResult().show();
-    }
+    //CTimeAnalyzer analyzer;
 
-    HeapSort hsort(data);
-    if(analyzer.Analyse(&hsort))
-    {
-        msort.getResult().show();
-    }
+    //InsertSort isort(data);
+    //if(analyzer.Analyse(&isort))
+    //{
+        ////isort.getResult().show();
+    //}
 
-    QuickSort qsort(data);
-    if(analyzer.Analyse(&qsort))
-    {
-        msort.getResult().show();
-    }
-    CMaxSubArray maxsubarr(data);
-    analyzer.Analyse(&maxsubarr);
+    //MergeSort msort(data);
+    //if(analyzer.Analyse(&msort))
+    //{
+        ////msort.getResult().show();
+    //}
+
+    //HeapSort hsort(data);
+    //if(analyzer.Analyse(&hsort))
+    //{
+        ////msort.getResult().show();
+    //}
+
+    //QuickSort qsort(data);
+    //if(analyzer.Analyse(&qsort))
+    //{
+        ////msort.getResult().show();
+    //}
+    //CMaxSubArray maxsubarr(data);
+    //analyzer.Analyse(&maxsubarr);
     return 0;
 }
 
