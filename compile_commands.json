@@ -1,0 +1,47 @@
+[
+{
+  "directory": "/Users/zhenyu/Code/cpp/c++/build/bin",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk   -std=gnu++11 -o CMakeFiles/study.dir/main.cpp.o -c /Users/zhenyu/Code/cpp/c++/src/main.cpp",
+  "file": "/Users/zhenyu/Code/cpp/c++/src/main.cpp"
+},
+{
+  "directory": "/Users/zhenyu/Code/cpp/c++/build/bin",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk   -std=gnu++11 -o CMakeFiles/study.dir/lib/log.cpp.o -c /Users/zhenyu/Code/cpp/c++/src/lib/log.cpp",
+  "file": "/Users/zhenyu/Code/cpp/c++/src/lib/log.cpp"
+},
+{
+  "directory": "/Users/zhenyu/Code/cpp/c++/build/bin",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk   -std=gnu++11 -o CMakeFiles/study.dir/algorithms/sort/sort.cpp.o -c /Users/zhenyu/Code/cpp/c++/src/algorithms/sort/sort.cpp",
+  "file": "/Users/zhenyu/Code/cpp/c++/src/algorithms/sort/sort.cpp"
+},
+{
+  "directory": "/Users/zhenyu/Code/cpp/c++/build/bin",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk   -std=gnu++11 -o CMakeFiles/study.dir/lib/time_analyzer.cpp.o -c /Users/zhenyu/Code/cpp/c++/src/lib/time_analyzer.cpp",
+  "file": "/Users/zhenyu/Code/cpp/c++/src/lib/time_analyzer.cpp"
+},
+{
+  "directory": "/Users/zhenyu/Code/cpp/c++/build/bin",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk   -std=gnu++11 -o CMakeFiles/study.dir/util/util.cpp.o -c /Users/zhenyu/Code/cpp/c++/src/util/util.cpp",
+  "file": "/Users/zhenyu/Code/cpp/c++/src/util/util.cpp"
+},
+{
+  "directory": "/Users/zhenyu/Code/cpp/c++/build/bin",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk   -std=gnu++11 -o CMakeFiles/study.dir/algorithms/find/maxsubarr.cpp.o -c /Users/zhenyu/Code/cpp/c++/src/algorithms/find/maxsubarr.cpp",
+  "file": "/Users/zhenyu/Code/cpp/c++/src/algorithms/find/maxsubarr.cpp"
+},
+{
+  "directory": "/Users/zhenyu/Code/cpp/c++/build/bin",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk   -std=gnu++11 -o CMakeFiles/study.dir/algorithms/sort/heapsort.cpp.o -c /Users/zhenyu/Code/cpp/c++/src/algorithms/sort/heapsort.cpp",
+  "file": "/Users/zhenyu/Code/cpp/c++/src/algorithms/sort/heapsort.cpp"
+},
+{
+  "directory": "/Users/zhenyu/Code/cpp/c++/build/bin",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk   -std=gnu++11 -o CMakeFiles/study.dir/algorithms/sort/quicksort.cpp.o -c /Users/zhenyu/Code/cpp/c++/src/algorithms/sort/quicksort.cpp",
+  "file": "/Users/zhenyu/Code/cpp/c++/src/algorithms/sort/quicksort.cpp"
+},
+{
+  "directory": "/Users/zhenyu/Code/cpp/c++/build/bin",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk   -std=gnu++11 -o CMakeFiles/study.dir/lib/huffman.cpp.o -c /Users/zhenyu/Code/cpp/c++/src/lib/huffman.cpp",
+  "file": "/Users/zhenyu/Code/cpp/c++/src/lib/huffman.cpp"
+}
+]

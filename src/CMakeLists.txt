@@ -7,6 +7,7 @@ SET(SRC_LIST main.cpp
     algorithms/find/maxsubarr.cpp
     algorithms/sort/heapsort.cpp
     algorithms/sort/quicksort.cpp
+    lib/huffman.cpp
     )
 SET(CMAKE_CXX_STANDARD 11)
 SET(CMAKE_BUILD_TYPE DEBUG)
